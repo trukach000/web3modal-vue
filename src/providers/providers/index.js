@@ -20,6 +20,8 @@ import DcentWalletLogo from "../logos/dcentwallet.png";
 import BitskiLogo from "../logos/bitski.svg";
 // @ts-ignore
 import FrameLogo from "../logos/frame.svg";
+// @ts-ignore
+import WalletLinkLogo from "../logos/walletlink.svg";
 
 
 export * from "../injected";
@@ -131,4 +133,15 @@ export const FRAME = {
     logo: FrameLogo,
     type: "web",
     check: "isFrameNative"
+};
+
+export const WALLETLINK = {
+  id: "walletlink",
+  name: "Coinbase Wallet",
+  logo: WalletLinkLogo,
+  type: "qrcode",
+  check: "isWalletLink",
+  package: {
+    required: [["appName", "infuraId", "rpc"]]
+  }
 };

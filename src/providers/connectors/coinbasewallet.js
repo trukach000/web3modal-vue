@@ -1,5 +1,5 @@
-const ConnectToWalletLink = (
-  WalletLink,
+const ConnectToCoinbaseWalletSdk = (
+  CoinbaseWalletSdk,
   opts
 ) => {
   return new Promise(async (resolve, reject) => {
@@ -15,15 +15,15 @@ const ConnectToWalletLink = (
       rpc = `https://mainnet.infura.io/v3/${infuraId}`;
     }
 
-    const walletLink = new WalletLink({
+    const coinbaseWalletSdk = new CoinbaseWalletSdk({
       appName,
       appLogoUrl,
       darkMode
     });
 
     try {
-      const provider = walletLink.makeWeb3Provider(rpc, chainId);
-      await provider.send('eth_requestAccounts');
+      const provider = coinbaseWalletSdk.makeWeb3Provider(rpc, chainId);
+      await provider.send("eth_requestAccounts");
       resolve(provider);
     } catch (e) {
       reject(e);
@@ -31,4 +31,4 @@ const ConnectToWalletLink = (
   });
 };
 
-export default ConnectToWalletLink;
+export default ConnectToCoinbaseWalletSdk;

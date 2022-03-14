@@ -10,7 +10,7 @@ import mewconnect from "./mewconnect";
 import dcentwallet from "./dcentwallet";
 import bitski from "./bitski";
 import frame from "./frame";
-import walletlink from "./walletlink";
+import coinbasewallet from "./coinbasewallet";
 
 export {
     injected,
@@ -25,5 +25,5 @@ export {
     dcentwallet,
     bitski,
     frame,
-    walletlink
+    coinbasewallet
 };

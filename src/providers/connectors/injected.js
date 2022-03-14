@@ -1,7 +1,7 @@
 const ConnectToInjected = async () => {
     let provider = null;
     if (typeof window.ethereum !== 'undefined') {
-        provider = window.ethereum;
+        provider = window.ethereum.providers.find((provider) => provider.isMetaMask);
         try {
             await provider.request({method: 'eth_requestAccounts'})
         } catch (error) {

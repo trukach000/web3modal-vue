@@ -88,7 +88,7 @@ export const COINBASE = {
     name: "Coinbase",
     logo: CoinbaseLogo,
     type: "injected",
-    check: "isToshi"
+    check: "isCoinbaseWallet"
 };
 
 export const CIPHER = {

@@ -12,4 +12,7 @@ module.exports = {
     sourceType: 'module',
     ecmaVersion: 2020
   },
+  rules: {
+    'no-unused-vars': 'off'
+  }
 };

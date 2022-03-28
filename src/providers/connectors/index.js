@@ -11,6 +11,7 @@ import dcentwallet from "./dcentwallet";
 import bitski from "./bitski";
 import frame from "./frame";
 import coinbasewallet from "./coinbasewallet";
+import metamask from "./metamask";
 
 export {
     injected,
@@ -25,5 +26,6 @@ export {
     dcentwallet,
     bitski,
     frame,
-    coinbasewallet
+    coinbasewallet,
+    metamask
 };

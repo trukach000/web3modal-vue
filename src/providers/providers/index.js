@@ -22,7 +22,8 @@ import BitskiLogo from "../logos/bitski.svg";
 import FrameLogo from "../logos/frame.svg";
 // @ts-ignore
 import CoinbaseWalletLogo from "../logos/coinbasewallet.svg";
-
+// @ts-ignore
+import MetaMaskLogo from "../logos/metamask.svg";
 
 export * from "../injected";
 
@@ -145,4 +146,12 @@ export const COINBASEWALLET = {
   package: {
     required: [["appName", "infuraId", "rpc"]]
   }
+};
+
+export const METAMASK = {
+  id: "metamask",
+  name: "MetaMask",
+  logo: MetaMaskLogo,
+  type: "injected",
+  check: "isMetaMask"
 };

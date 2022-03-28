@@ -26,7 +26,7 @@ export class ProviderController {
 
         this.providers = Object.keys(list.connectors).map((id) => {
             let providerInfo;
-            if (id === INJECTED_PROVIDER_ID) {
+            if (id === INJECTED_PROVIDER_ID && this.injectedProvider === null) {
                 providerInfo = this.injectedProvider || list.providers.FALLBACK;
             } else {
                 providerInfo = getProviderInfoById(id);
@@ -143,7 +143,7 @@ export class ProviderController {
             }
         });
         return userOptions;
-    };
+    }
 
     getProvider(id) {
         return filterMatches(
@@ -182,9 +182,9 @@ export class ProviderController {
                 this.setCachedProvider(id);
             }
         } catch (error) {
-            this.eventController.trigger(ERROR_EVENT);
+            this.eventController.trigger(ERROR_EVENT, error);
         }
-    };
+    }
 
     async connectToCachedProvider() {
         const provider = this.getProvider(this.cachedProvider);

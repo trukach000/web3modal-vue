@@ -1,7 +1,11 @@
-const ConnectToInjected = async () => {
+const ConnectToMetamask = async () => {
     let provider = null;
     if (typeof window.ethereum !== 'undefined') {
-        provider = window.ethereum;
+        if ( window.ethereum.providers && window.ethereum.providers.length > 0){
+          provider = window.ethereum.providers.find((provider) => provider.isMetaMask);
+        } else {
+          throw new Error("No metamask provider found");
+        }
         try {
             await provider.request({method: 'eth_requestAccounts'})
         } catch (error) {
@@ -15,4 +19,4 @@ const ConnectToInjected = async () => {
     return provider;
 };
 
-export default ConnectToInjected;
+export default ConnectToMetamask;

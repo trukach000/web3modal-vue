@@ -141,6 +141,7 @@ export default {
       this.show = !this.show;
     },
     onError(error) {
+      this.providerController.clearCachedProvider();
       if (this.show) {
         this._toggleModal();
       }
